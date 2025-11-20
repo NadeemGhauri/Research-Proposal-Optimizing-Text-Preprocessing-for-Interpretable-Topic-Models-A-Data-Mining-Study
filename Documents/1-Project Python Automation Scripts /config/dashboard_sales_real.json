@@ -1,0 +1,61 @@
+{
+  "title": "Sales Performance Dashboard 2025",
+  "data_source": "data/sales_data.csv",
+  "data_source_type": "csv",
+  "charts": [
+    {
+      "type": "bar",
+      "title": "Revenue by Product",
+      "data_column_x": "Product",
+      "data_column_y": "Revenue",
+      "aggregation": "sum",
+      "orientation": "v",
+      "color_scheme": "Plotly"
+    },
+    {
+      "type": "line",
+      "title": "Sales Trend Over Time",
+      "data_column_x": "Date",
+      "data_column_y": "Revenue",
+      "aggregation": "sum",
+      "color_scheme": "Plotly"
+    },
+    {
+      "type": "pie",
+      "title": "Market Share by Region",
+      "data_column_x": "Region",
+      "data_column_y": "Revenue",
+      "aggregation": "sum"
+    },
+    {
+      "type": "scatter",
+      "title": "Units Sold vs Revenue",
+      "data_column_x": "Units_Sold",
+      "data_column_y": "Revenue",
+      "color_column": "Region",
+      "aggregation": "none"
+    },
+    {
+      "type": "bar",
+      "title": "Performance by Sales Person",
+      "data_column_x": "Sales_Person",
+      "data_column_y": "Revenue",
+      "aggregation": "sum",
+      "orientation": "h",
+      "color_scheme": "Plotly"
+    }
+  ],
+  "filters": ["Region", "Product", "Sales_Person"],
+  "theme": "plotly_white",
+  "color_palette": [
+    "#3498db", "#2ecc71", "#e74c3c", "#f39c12", 
+    "#9b59b6", "#1abc9c", "#34495e", "#e67e22"
+  ],
+  "show_data_table": true,
+  "rows_per_page": 25,
+  "enable_export": true,
+  "export_formats": ["html", "png", "pdf"],
+  "auto_refresh": false,
+  "refresh_interval": 300,
+  "layout": "grid"
+}

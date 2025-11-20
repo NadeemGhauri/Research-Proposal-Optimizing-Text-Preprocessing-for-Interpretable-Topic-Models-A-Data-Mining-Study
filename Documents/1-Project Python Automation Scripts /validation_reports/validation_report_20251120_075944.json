@@ -1,0 +1,264 @@
+{
+  "metadata": {
+    "data_source": "validation_test/test_data.csv",
+    "validation_date": "2025-11-20T07:59:44.919688",
+    "total_rows": 10,
+    "total_columns": 12
+  },
+  "quality_metrics": {
+    "overall_score": 76.67,
+    "total_cells": 120,
+    "total_errors": 28,
+    "error_rate": 23.33,
+    "valid_rows": 0,
+    "completeness": 92.5,
+    "consistency": 91.43,
+    "validity": 87.14
+  },
+  "statistics": {
+    "total_rows": 10,
+    "total_columns": 12,
+    "valid_rows": 0,
+    "invalid_rows": 10,
+    "errors_by_type": {
+      "data_type": 10,
+      "range": 5,
+      "mandatory": 3,
+      "uniqueness": 2,
+      "pattern": 2,
+      "allowed_value": 2,
+      "string_length": 1,
+      "cross_field": 1,
+      "business_rule": 2
+    },
+    "errors_by_column": {
+      "is_active": 10,
+      "age": 3,
+      "salary": 2,
+      "name": 3,
+      "email": 2,
+      "id": 2,
+      "phone": 1,
+      "status": 1,
+      "department": 1
+    }
+  },
+  "validation_results": {
+    "data_type_errors": [
+      {
+        "row": 0,
+        "column": "is_active",
+        "value": "True",
+        "expected_type": "bool",
+        "error": "Expected boolean, got str: True"
+      },
+      {
+        "row": 1,
+        "column": "is_active",
+        "value": "True",
+        "expected_type": "bool",
+        "error": "Expected boolean, got str: True"
+      },
+      {
+        "row": 2,
+        "column": "is_active",
+        "value": "True",
+        "expected_type": "bool",
+        "error": "Expected boolean, got str: True"
+      },
+      {
+        "row": 3,
+        "column": "is_active",
+        "value": "False",
+        "expected_type": "bool",
+        "error": "Expected boolean, got str: False"
+      },
+      {
+        "row": 4,
+        "column": "is_active",
+        "value": "True",
+        "expected_type": "bool",
+        "error": "Expected boolean, got str: True"
+      },
+      {
+        "row": 5,
+        "column": "is_active",
+        "value": "True",
+        "expected_type": "bool",
+        "error": "Expected boolean, got str: True"
+      },
+      {
+        "row": 6,
+        "column": "is_active",
+        "value": "yes",
+        "expected_type": "bool",
+        "error": "Expected boolean, got str: yes"
+      },
+      {
+        "row": 7,
+        "column": "is_active",
+        "value": "True",
+        "expected_type": "bool",
+        "error": "Expected boolean, got str: True"
+      },
+      {
+        "row": 8,
+        "column": "is_active",
+        "value": "True",
+        "expected_type": "bool",
+        "error": "Expected boolean, got str: True"
+      },
+      {
+        "row": 9,
+        "column": "is_active",
+        "value": "False",
+        "expected_type": "bool",
+        "error": "Expected boolean, got str: False"
+      }
+    ],
+    "range_errors": [
+      {
+        "row": 2,
+        "column": "age",
+        "value": 150,
+        "min": 18,
+        "max": 100,
+        "error": "Value 150 exceeds maximum 100"
+      },
+      {
+        "row": 4,
+        "column": "age",
+        "value": 10,
+        "min": 18,
+        "max": 100,
+        "error": "Value 10 is below minimum 18"
+      },
+      {
+        "row": 8,
+        "column": "age",
+        "value": -5,
+        "min": 18,
+        "max": 100,
+        "error": "Value -5 is below minimum 18"
+      },
+      {
+        "row": 7,
+        "column": "salary",
+        "value": -10000,
+        "min": 0,
+        "max": 1000000,
+        "error": "Value -10000 is below minimum 0"
+      },
+      {
+        "row": 9,
+        "column": "salary",
+        "value": 1500000,
+        "min": 0,
+        "max": 1000000,
+        "error": "Value 1500000 exceeds maximum 1000000"
+      }
+    ],
+    "mandatory_field_errors": [
+      {
+        "row": 2,
+        "column": "name",
+        "error": "Mandatory field 'name' is empty"
+      },
+      {
+        "row": 9,
+        "column": "name",
+        "error": "Mandatory field 'name' is empty"
+      },
+      {
+        "row": 7,
+        "column": "email",
+        "error": "Mandatory field 'email' is empty"
+      }
+    ],
+    "uniqueness_errors": [
+      {
+        "row": 2,
+        "column": "id",
+        "value": 3,
+        "error": "Duplicate value '3' in unique field 'id'"
+      },
+      {
+        "row": 3,
+        "column": "id",
+        "value": 3,
+        "error": "Duplicate value '3' in unique field 'id'"
+      }
+    ],
+    "pattern_errors": [
+      {
+        "row": 2,
+        "column": "email",
+        "value": "charlie.example.com",
+        "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+        "error": "Value 'charlie.example.com' does not match pattern '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$'"
+      },
+      {
+        "row": 5,
+        "column": "phone",
+        "value": "1234567890",
+        "pattern": "^\\d{3}-\\d{3}-\\d{4}$",
+        "error": "Value '1234567890' does not match pattern '^\\d{3}-\\d{3}-\\d{4}$'"
+      }
+    ],
+    "allowed_value_errors": [
+      {
+        "row": 2,
+        "column": "status",
+        "value": "suspended",
+        "allowed_values": [
+          "active",
+          "inactive",
+          "pending"
+        ],
+        "error": "Value 'suspended' not in allowed values: ['active', 'inactive', 'pending']"
+      },
+      {
+        "row": 5,
+        "column": "department",
+        "value": "Finance",
+        "allowed_values": [
+          "IT",
+          "HR",
+          "Sales",
+          "Marketing"
+        ],
+        "error": "Value 'Finance' not in allowed values: ['IT', 'HR', 'Sales', 'Marketing']"
+      }
+    ],
+    "string_length_errors": [
+      {
+        "row": 5,
+        "column": "name",
+        "value": "F",
+        "length": 1,
+        "min_length": 2,
+        "max_length": 30,
+        "error": "String length 1 is below minimum 2"
+      }
+    ],
+    "cross_field_errors": [
+      {
+        "row": 2,
+        "rule": "Start Date Before End Date",
+        "error": "Start date (2020-03-01) must be before end date (2019-12-01)"
+      }
+    ],
+    "business_rule_errors": [
+      {
+        "row": 7,
+        "rule": "Minimum Salary for Seniors",
+        "error": "Senior employees must have salary >= 50000 (got -10000.0)"
+      },
+      {
+        "row": 2,
+        "rule": "Age-Salary Ratio Check",
+        "error": "Salary 75000.0 seems low for age 150 (expected at least 150000)"
+      }
+    ]
+  }
+}

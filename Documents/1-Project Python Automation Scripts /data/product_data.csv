@@ -1,0 +1,7 @@
+Product,Category,Cost,Stock,Supplier
+Laptop,Computer,685,365,Supplier 2
+Desktop,Computer,815,477,Supplier 5
+Tablet,Accessory,364,205,Supplier 5
+Monitor,Accessory,1101,388,Supplier 5
+Keyboard,Accessory,179,134,Supplier 2
+Mouse,Accessory,710,381,Supplier 2

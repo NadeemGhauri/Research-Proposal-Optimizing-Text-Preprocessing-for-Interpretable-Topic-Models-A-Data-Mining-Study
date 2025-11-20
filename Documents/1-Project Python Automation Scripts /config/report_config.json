@@ -1,0 +1,81 @@
+{
+  "output_folder": "./reports",
+  "report_name": "sales_report",
+  "data_sources": [
+    {
+      "name": "Sales_Data",
+      "type": "csv",
+      "path": "./data/sales_data.csv"
+    },
+    {
+      "name": "Product_Data",
+      "type": "csv",
+      "path": "./data/product_data.csv"
+    }
+  ],
+  "kpis": [
+    {
+      "name": "Total Revenue",
+      "value": 250000,
+      "target": 200000
+    },
+    {
+      "name": "Total Orders",
+      "value": 450,
+      "target": 500
+    },
+    {
+      "name": "Average Order Value",
+      "value": 555,
+      "target": 400
+    },
+    {
+      "name": "Customer Satisfaction",
+      "value": 4.5,
+      "target": 4.0
+    }
+  ],
+  "pivot_tables": [
+    {
+      "sheet_name": "Sales_By_Region",
+      "source": "Sales_Data",
+      "index": ["Region"],
+      "values": ["Revenue", "Units_Sold"],
+      "aggfunc": "sum"
+    },
+    {
+      "sheet_name": "Sales_By_Product",
+      "source": "Sales_Data",
+      "index": ["Product"],
+      "values": ["Revenue"],
+      "aggfunc": "sum"
+    }
+  ],
+  "charts": [
+    {
+      "sheet_name": "Sales_By_Region",
+      "type": "bar",
+      "title": "Revenue by Region",
+      "data_range": "A1:B10",
+      "position": "E2"
+    }
+  ],
+  "conditional_formatting": [
+    {
+      "sheet_name": "Sales_Data",
+      "type": "color_scale",
+      "range": "E2:E100"
+    }
+  ],
+  "password": "Report2024",
+  "email": {
+    "enabled": false,
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "sender_email": "your-email@gmail.com",
+    "sender_password": "your-app-password",
+    "recipients": ["recipient@example.com"],
+    "subject": "Monthly Sales Report",
+    "body": "Please find the attached monthly sales report.\n\nBest regards,\nAutomated Reporting System"
+  }
+}

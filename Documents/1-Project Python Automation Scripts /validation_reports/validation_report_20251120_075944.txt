@@ -1,0 +1,156 @@
+================================================================================
+DATA VALIDATION REPORT
+================================================================================
+Data Source: validation_test/test_data.csv
+Validation Date: 2025-11-20 07:59:44
+
+DATASET SUMMARY:
+  Total Rows: 10
+  Total Columns: 12
+  Valid Rows: 0
+  Invalid Rows: 10
+
+DATA QUALITY SCORE:
+  Overall Score: 76.67/100
+  Completeness: 92.5/100
+  Consistency: 91.43/100
+  Validity: 87.14/100
+
+ERROR SUMMARY:
+  Total Errors: 28
+  Error Rate: 23.33%
+
+ERRORS BY TYPE:
+  Data Type: 10
+  Range: 5
+  Mandatory: 3
+  Uniqueness: 2
+  Pattern: 2
+  Allowed Value: 2
+  Business Rule: 2
+  String Length: 1
+  Cross Field: 1
+
+ERRORS BY COLUMN:
+  is_active: 10
+  age: 3
+  name: 3
+  salary: 2
+  email: 2
+  id: 2
+  phone: 1
+  status: 1
+  department: 1
+
+================================================================================
+DATA TYPE ERRORS (10 total):
+================================================================================
+  Row 0: Expected boolean, got str: True
+    Column: is_active
+    Value: True
+  Row 1: Expected boolean, got str: True
+    Column: is_active
+    Value: True
+  Row 2: Expected boolean, got str: True
+    Column: is_active
+    Value: True
+  Row 3: Expected boolean, got str: False
+    Column: is_active
+    Value: False
+  Row 4: Expected boolean, got str: True
+    Column: is_active
+    Value: True
+  Row 5: Expected boolean, got str: True
+    Column: is_active
+    Value: True
+  Row 6: Expected boolean, got str: yes
+    Column: is_active
+    Value: yes
+  Row 7: Expected boolean, got str: True
+    Column: is_active
+    Value: True
+  Row 8: Expected boolean, got str: True
+    Column: is_active
+    Value: True
+  Row 9: Expected boolean, got str: False
+    Column: is_active
+    Value: False
+
+================================================================================
+RANGE ERRORS (5 total):
+================================================================================
+  Row 2: Value 150 exceeds maximum 100
+    Column: age
+    Value: 150
+  Row 4: Value 10 is below minimum 18
+    Column: age
+    Value: 10
+  Row 8: Value -5 is below minimum 18
+    Column: age
+    Value: -5
+  Row 7: Value -10000 is below minimum 0
+    Column: salary
+    Value: -10000
+  Row 9: Value 1500000 exceeds maximum 1000000
+    Column: salary
+    Value: 1500000
+
+================================================================================
+MANDATORY FIELD ERRORS (3 total):
+================================================================================
+  Row 2: Mandatory field 'name' is empty
+    Column: name
+  Row 9: Mandatory field 'name' is empty
+    Column: name
+  Row 7: Mandatory field 'email' is empty
+    Column: email
+
+================================================================================
+UNIQUENESS ERRORS (2 total):
+================================================================================
+  Row 2: Duplicate value '3' in unique field 'id'
+    Column: id
+    Value: 3
+  Row 3: Duplicate value '3' in unique field 'id'
+    Column: id
+    Value: 3
+
+================================================================================
+PATTERN ERRORS (2 total):
+================================================================================
+  Row 2: Value 'charlie.example.com' does not match pattern '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+    Column: email
+    Value: charlie.example.com
+  Row 5: Value '1234567890' does not match pattern '^\d{3}-\d{3}-\d{4}$'
+    Column: phone
+    Value: 1234567890
+
+================================================================================
+ALLOWED VALUE ERRORS (2 total):
+================================================================================
+  Row 2: Value 'suspended' not in allowed values: ['active', 'inactive', 'pending']
+    Column: status
+    Value: suspended
+  Row 5: Value 'Finance' not in allowed values: ['IT', 'HR', 'Sales', 'Marketing']
+    Column: department
+    Value: Finance
+
+================================================================================
+STRING LENGTH ERRORS (1 total):
+================================================================================
+  Row 5: String length 1 is below minimum 2
+    Column: name
+    Value: F
+
+================================================================================
+CROSS FIELD ERRORS (1 total):
+================================================================================
+  Row 2: Start date (2020-03-01) must be before end date (2019-12-01)
+
+================================================================================
+BUSINESS RULE ERRORS (2 total):
+================================================================================
+  Row 7: Senior employees must have salary >= 50000 (got -10000.0)
+  Row 2: Salary 75000.0 seems low for age 150 (expected at least 150000)
+
+================================================================================

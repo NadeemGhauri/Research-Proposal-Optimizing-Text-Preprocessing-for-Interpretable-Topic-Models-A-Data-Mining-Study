@@ -1,0 +1,55 @@
+{
+  "data_source": "data/sales_data.csv",
+  "data_source_type": "csv",
+  "title": "Sales Performance Dashboard",
+  "description": "Real-time sales analytics and KPIs",
+  "layout": "grid",
+  "theme": "plotly_white",
+  "charts": [
+    {
+      "type": "bar",
+      "title": "Sales by Product",
+      "data_column_x": "product",
+      "data_column_y": "sales",
+      "aggregation": "sum",
+      "orientation": "v",
+      "show_legend": true
+    },
+    {
+      "type": "line",
+      "title": "Sales Trend Over Time",
+      "data_column_x": "date",
+      "data_column_y": "sales",
+      "color_column": "region",
+      "aggregation": "sum"
+    },
+    {
+      "type": "pie",
+      "title": "Market Share by Region",
+      "data_column_x": "region",
+      "data_column_y": "sales",
+      "aggregation": "sum"
+    },
+    {
+      "type": "scatter",
+      "title": "Sales vs Profit Analysis",
+      "data_column_x": "sales",
+      "data_column_y": "profit",
+      "color_column": "product",
+      "size_column": "quantity",
+      "aggregation": "none"
+    }
+  ],
+  "filters": ["region", "product", "category"],
+  "default_filters": {
+    "region": "All"
+  },
+  "show_data_table": true,
+  "rows_per_page": 20,
+  "enable_export": true,
+  "export_formats": ["html", "png", "pdf"],
+  "auto_refresh": false,
+  "refresh_interval": 300,
+  "output_folder": "./dashboards",
+  "output_filename": "sales_dashboard.html"
+}

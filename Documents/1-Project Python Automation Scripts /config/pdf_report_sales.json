@@ -1,0 +1,138 @@
+{
+  "title": "Q4 2024 Sales Performance Report",
+  "subtitle": "Comprehensive Analysis of Regional Sales",
+  "author": "Sales Analytics Team",
+  "subject": "Sales Performance Analysis",
+  "cover_subtitle": "Fourth Quarter 2024 - Regional Performance Summary",
+  
+  "data_sources": [
+    {
+      "name": "sales",
+      "path": "data/sales_data.csv",
+      "type": "csv"
+    }
+  ],
+  
+  "page_size": "letter",
+  "orientation": "portrait",
+  
+  "include_cover_page": true,
+  "include_toc": true,
+  "include_header": true,
+  "include_footer": true,
+  "include_page_numbers": true,
+  
+  "branding": {
+    "primary_color": "#2c3e50",
+    "secondary_color": "#3498db",
+    "accent_color": "#e74c3c",
+    "text_color": "#34495e",
+    "company_name": "ABC Corporation",
+    "report_footer": "Confidential - Q4 2024 Sales Report",
+    "title_size": 28,
+    "heading1_size": 20,
+    "heading2_size": 16,
+    "body_size": 11
+  },
+  
+  "sections": [
+    {
+      "title": "Executive Summary",
+      "content_type": "text",
+      "content": "This report provides a comprehensive analysis of sales performance for Q4 2024. Key highlights include strong performance in the East region, with Desktop products showing the highest revenue contribution. The analysis covers regional performance, product mix, and sales personnel effectiveness across all operating territories."
+    },
+    {
+      "title": "Revenue by Product Category",
+      "content_type": "chart",
+      "data_source": "sales",
+      "content": {
+        "chart_type": "bar",
+        "title": "Total Revenue by Product",
+        "data_column_x": "Product",
+        "data_column_y": "Revenue",
+        "aggregation": "sum",
+        "width": 432,
+        "height": 288,
+        "color_scheme": "Set2",
+        "show_grid": true,
+        "ylabel": "Revenue ($)"
+      }
+    },
+    {
+      "title": "Regional Performance Overview",
+      "content_type": "text",
+      "content": "Regional analysis reveals significant performance variations across our operating territories. The East region continues to lead in total revenue, while the West region shows the highest average order value. Central and North regions demonstrate steady growth patterns with opportunities for expansion."
+    },
+    {
+      "title": "Revenue Distribution by Region",
+      "content_type": "chart",
+      "data_source": "sales",
+      "content": {
+        "chart_type": "pie",
+        "title": "Market Share by Region",
+        "data_column_x": "Region",
+        "data_column_y": "Revenue",
+        "aggregation": "sum",
+        "width": 432,
+        "height": 288,
+        "color_scheme": "Set3"
+      }
+    },
+    {
+      "title": "Sales Performance Metrics",
+      "content_type": "table",
+      "data_source": "sales",
+      "content": {
+        "title": "Top 20 Sales Orders by Revenue",
+        "columns": ["Order_ID", "Date", "Region", "Product", "Sales_Person", "Revenue", "Customer_Rating"],
+        "max_rows": 20,
+        "show_index": false,
+        "alternate_row_colors": true,
+        "header_bg_color": "#2c3e50"
+      }
+    },
+    {
+      "title": "Sales Personnel Performance",
+      "content_type": "chart",
+      "data_source": "sales",
+      "content": {
+        "chart_type": "bar",
+        "title": "Total Revenue by Sales Person",
+        "data_column_x": "Sales_Person",
+        "data_column_y": "Revenue",
+        "aggregation": "sum",
+        "width": 432,
+        "height": 288,
+        "color_scheme": "viridis",
+        "show_grid": true,
+        "ylabel": "Total Revenue ($)"
+      }
+    },
+    {
+      "title": "Revenue vs Units Sold Analysis",
+      "content_type": "chart",
+      "data_source": "sales",
+      "content": {
+        "chart_type": "scatter",
+        "title": "Relationship Between Units Sold and Revenue",
+        "data_column_x": "Units_Sold",
+        "data_column_y": "Revenue",
+        "aggregation": "none",
+        "width": 432,
+        "height": 288,
+        "color_scheme": "deep",
+        "show_grid": true,
+        "xlabel": "Units Sold",
+        "ylabel": "Revenue ($)"
+      }
+    },
+    {
+      "title": "Conclusion and Recommendations",
+      "content_type": "text",
+      "content": "Based on the analysis presented in this report, we recommend the following actions: 1) Increase focus on Desktop products which show the highest revenue potential, 2) Invest in training and support for sales personnel to maintain high performance levels, 3) Expand operations in underperforming regions to capture market opportunities, 4) Continue monitoring customer ratings to ensure quality and satisfaction remain high across all product categories and regions."
+    }
+  ],
+  
+  "output_folder": "./reports",
+  "output_filename": "sales_report_q4_2024.pdf"
+}

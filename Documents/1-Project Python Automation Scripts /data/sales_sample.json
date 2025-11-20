@@ -1,0 +1,222 @@
+[
+  {
+    "Order_ID":"ORD1000",
+    "Date":"2025-01-02",
+    "Region":"East",
+    "Product":"Laptop",
+    "Sales_Person":"David Brown",
+    "Units_Sold":1,
+    "Unit_Price":473,
+    "Revenue":473,
+    "Customer_Rating":4.7
+  },
+  {
+    "Order_ID":"ORD1001",
+    "Date":"2025-07-13",
+    "Region":"Central",
+    "Product":"Desktop",
+    "Sales_Person":"Eve Davis",
+    "Units_Sold":11,
+    "Unit_Price":1462,
+    "Revenue":16082,
+    "Customer_Rating":4.9
+  },
+  {
+    "Order_ID":"ORD1002",
+    "Date":"2025-02-05",
+    "Region":"East",
+    "Product":"Keyboard",
+    "Sales_Person":"David Brown",
+    "Units_Sold":12,
+    "Unit_Price":699,
+    "Revenue":8388,
+    "Customer_Rating":3.4
+  },
+  {
+    "Order_ID":"ORD1003",
+    "Date":"2025-09-20",
+    "Region":"North",
+    "Product":"Desktop",
+    "Sales_Person":"Alice Johnson",
+    "Units_Sold":3,
+    "Unit_Price":457,
+    "Revenue":1371,
+    "Customer_Rating":3.9
+  },
+  {
+    "Order_ID":"ORD1004",
+    "Date":"2025-04-01",
+    "Region":"West",
+    "Product":"Laptop",
+    "Sales_Person":"David Brown",
+    "Units_Sold":9,
+    "Unit_Price":893,
+    "Revenue":8037,
+    "Customer_Rating":3.2
+  },
+  {
+    "Order_ID":"ORD1005",
+    "Date":"2025-05-08",
+    "Region":"Central",
+    "Product":"Tablet",
+    "Sales_Person":"Bob Smith",
+    "Units_Sold":13,
+    "Unit_Price":609,
+    "Revenue":7917,
+    "Customer_Rating":3.0
+  },
+  {
+    "Order_ID":"ORD1006",
+    "Date":"2025-09-12",
+    "Region":"Central",
+    "Product":"Laptop",
+    "Sales_Person":"Eve Davis",
+    "Units_Sold":12,
+    "Unit_Price":1934,
+    "Revenue":23208,
+    "Customer_Rating":3.6
+  },
+  {
+    "Order_ID":"ORD1007",
+    "Date":"2025-06-09",
+    "Region":"South",
+    "Product":"Laptop",
+    "Sales_Person":"Carol White",
+    "Units_Sold":9,
+    "Unit_Price":911,
+    "Revenue":8199,
+    "Customer_Rating":5.0
+  },
+  {
+    "Order_ID":"ORD1008",
+    "Date":"2025-05-28",
+    "Region":"Central",
+    "Product":"Desktop",
+    "Sales_Person":"Carol White",
+    "Units_Sold":20,
+    "Unit_Price":1825,
+    "Revenue":36500,
+    "Customer_Rating":4.9
+  },
+  {
+    "Order_ID":"ORD1009",
+    "Date":"2025-01-25",
+    "Region":"West",
+    "Product":"Keyboard",
+    "Sales_Person":"Eve Davis",
+    "Units_Sold":5,
+    "Unit_Price":1162,
+    "Revenue":5810,
+    "Customer_Rating":4.2
+  },
+  {
+    "Order_ID":"ORD1010",
+    "Date":"2025-04-01",
+    "Region":"North",
+    "Product":"Keyboard",
+    "Sales_Person":"David Brown",
+    "Units_Sold":4,
+    "Unit_Price":510,
+    "Revenue":2040,
+    "Customer_Rating":3.1
+  },
+  {
+    "Order_ID":"ORD1011",
+    "Date":"2025-07-30",
+    "Region":"East",
+    "Product":"Desktop",
+    "Sales_Person":"Bob Smith",
+    "Units_Sold":1,
+    "Unit_Price":1096,
+    "Revenue":1096,
+    "Customer_Rating":3.7
+  },
+  {
+    "Order_ID":"ORD1012",
+    "Date":"2025-09-22",
+    "Region":"South",
+    "Product":"Monitor",
+    "Sales_Person":"Eve Davis",
+    "Units_Sold":7,
+    "Unit_Price":1039,
+    "Revenue":7273,
+    "Customer_Rating":3.2
+  },
+  {
+    "Order_ID":"ORD1013",
+    "Date":"2025-03-25",
+    "Region":"West",
+    "Product":"Laptop",
+    "Sales_Person":"Bob Smith",
+    "Units_Sold":20,
+    "Unit_Price":457,
+    "Revenue":9140,
+    "Customer_Rating":3.7
+  },
+  {
+    "Order_ID":"ORD1014",
+    "Date":"2025-09-30",
+    "Region":"North",
+    "Product":"Laptop",
+    "Sales_Person":"Bob Smith",
+    "Units_Sold":1,
+    "Unit_Price":1995,
+    "Revenue":1995,
+    "Customer_Rating":4.9
+  },
+  {
+    "Order_ID":"ORD1015",
+    "Date":"2025-02-09",
+    "Region":"Central",
+    "Product":"Keyboard",
+    "Sales_Person":"Alice Johnson",
+    "Units_Sold":2,
+    "Unit_Price":422,
+    "Revenue":844,
+    "Customer_Rating":5.0
+  },
+  {
+    "Order_ID":"ORD1016",
+    "Date":"2025-03-24",
+    "Region":"East",
+    "Product":"Mouse",
+    "Sales_Person":"Carol White",
+    "Units_Sold":3,
+    "Unit_Price":1280,
+    "Revenue":3840,
+    "Customer_Rating":3.7
+  },
+  {
+    "Order_ID":"ORD1017",
+    "Date":"2025-08-11",
+    "Region":"North",
+    "Product":"Laptop",
+    "Sales_Person":"David Brown",
+    "Units_Sold":4,
+    "Unit_Price":1428,
+    "Revenue":5712,
+    "Customer_Rating":4.2
+  },
+  {
+    "Order_ID":"ORD1018",
+    "Date":"2025-03-09",
+    "Region":"South",
+    "Product":"Tablet",
+    "Sales_Person":"Bob Smith",
+    "Units_Sold":6,
+    "Unit_Price":361,
+    "Revenue":2166,
+    "Customer_Rating":3.6
+  },
+  {
+    "Order_ID":"ORD1019",
+    "Date":"2025-02-20",
+    "Region":"Central",
+    "Product":"Monitor",
+    "Sales_Person":"Alice Johnson",
+    "Units_Sold":11,
+    "Unit_Price":1218,
+    "Revenue":13398,
+    "Customer_Rating":4.5
+  }
+]

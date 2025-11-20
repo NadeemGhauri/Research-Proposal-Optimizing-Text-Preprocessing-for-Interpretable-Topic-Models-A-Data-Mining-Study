@@ -1,0 +1,26 @@
+{
+  "url": "https://api.github.com/repos/octocat/Hello-World/commits",
+  "params": {
+    "per_page": 30
+  },
+  "headers": {
+    "Accept": "application/vnd.github+json",
+    "X-GitHub-Api-Version": "2022-11-28"
+  },
+  "auth_type": "api_key",
+  "api_key": "Bearer ghp_YOUR_GITHUB_TOKEN_HERE",
+  "api_key_header": "Authorization",
+  "pagination": {
+    "type": "next_link",
+    "next_key": "next"
+  },
+  "rate_limit_sleep": 1.0,
+  "max_retries": 3,
+  "output_folder": "output/github",
+  "save_json": true,
+  "save_csv": true,
+  "save_excel": true,
+  "email_alerts": {
+    "enabled": false
+  }
+}

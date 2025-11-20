@@ -1,0 +1,21 @@
+{
+  "urls": [
+    "https://spa-example.com/dashboard"
+  ],
+  "use_selenium": true,
+  "selenium_wait_time": 15,
+  "page_load_timeout": 30,
+  "headless": true,
+  "css_selectors": {
+    "dynamic_content": ".loaded-by-javascript",
+    "user_data": ".user-info",
+    "dashboard_items": ".dashboard-card"
+  },
+  "output_formats": ["json", "csv"],
+  "output_folder": "./scraped_data",
+  "base_filename": "selenium_scrape",
+  "min_delay": 2.0,
+  "max_delay": 4.0,
+  "respect_robots_txt": true,
+  "rotate_user_agents": true
+}

@@ -1,0 +1,49 @@
+================================================================================
+SMART FILE ORGANIZER REPORT
+================================================================================
+Source Folder: test_files
+Target Folder: test_files/Organized
+Organization Date: 2025-11-19 06:55:16
+
+CONFIGURATION:
+  - Organize by Type: True
+  - Organize by Date: False
+  - Rename Files: False
+  - Remove Duplicates: True
+  - Safe Mode: True
+
+STATISTICS:
+  - Total Files Found: 34
+  - Files Organized: 0
+  - Files Skipped: 0
+  - Duplicates Found: 2
+  - Duplicates Removed: 0
+  - Space Saved: 0.00 B
+  - Errors: 0
+
+FILES BY CATEGORY:
+  - Documents: 8 files
+  - Images: 6 files
+  - Code: 6 files
+  - Archives: 4 files
+  - Videos: 4 files
+  - Audio: 4 files
+
+DUPLICATE FILES:
+  - copy_of_document.pdf (duplicate of document_1.pdf)
+  - duplicate_doc.pdf (duplicate of document_1.pdf)
+
+PLANNED OPERATIONS (Safe Mode - Preview):
+  - MOVE: image_2.gif -> test_files/Organized/Images/image_2.gif
+  - MOVE: document_2.xlsx -> test_files/Organized/Documents/document_2.xlsx
+  - MOVE: document_2.txt -> test_files/Organized/Documents/document_2.txt
+  - MOVE: image_1.gif -> test_files/Organized/Images/image_1.gif
+  - MOVE: document_1.txt -> test_files/Organized/Documents/document_1.txt
+  - MOVE: archive_1.zip -> test_files/Organized/Archives/archive_1.zip
+  - MOVE: archive_2.zip -> test_files/Organized/Archives/archive_2.zip
+  - MOVE: code_1.js -> test_files/Organized/Code/code_1.js
+  - MOVE: code_2.java -> test_files/Organized/Code/code_2.java
+  - MOVE: archive_1.tar -> test_files/Organized/Archives/archive_1.tar
+  ... and 22 more operations
+
+================================================================================

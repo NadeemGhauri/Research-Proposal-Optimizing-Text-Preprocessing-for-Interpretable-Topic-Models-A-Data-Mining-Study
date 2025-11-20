@@ -1,0 +1,36 @@
+{
+  "url": "https://api.example.com/v1/users",
+  "params": {
+    "status": "active",
+    "include": "profile"
+  },
+  "headers": {
+    "Accept": "application/json",
+    "User-Agent": "MyDataFetcher/1.0"
+  },
+  "auth_type": "api_key",
+  "api_key": "Bearer YOUR_API_KEY_HERE",
+  "api_key_header": "Authorization",
+  "pagination": {
+    "type": "page",
+    "page_param": "page",
+    "start_page": 1,
+    "data_path": "users"
+  },
+  "rate_limit_sleep": 1.0,
+  "max_retries": 5,
+  "output_folder": "output",
+  "save_json": true,
+  "save_csv": true,
+  "save_excel": true,
+  "email_alerts": {
+    "enabled": false,
+    "from": "alerts@example.com",
+    "to": ["admin@example.com"],
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "smtp_user": "your-email@gmail.com",
+    "smtp_password": "your-app-password",
+    "use_tls": true
+  }
+}

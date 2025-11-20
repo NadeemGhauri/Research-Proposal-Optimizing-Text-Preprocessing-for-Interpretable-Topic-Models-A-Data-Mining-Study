@@ -1,0 +1,40 @@
+{
+  "url": "https://api.example.com/v2/data",
+  "params": {
+    "type": "transactions"
+  },
+  "headers": {
+    "Accept": "application/json"
+  },
+  "auth_type": "oauth2",
+  "oauth": {
+    "client_id": "YOUR_CLIENT_ID",
+    "client_secret": "YOUR_CLIENT_SECRET",
+    "token_url": "https://api.example.com/oauth/token",
+    "scope": ["read:data", "read:transactions"]
+  },
+  "pagination": {
+    "type": "offset",
+    "offset_param": "offset",
+    "limit_param": "limit",
+    "limit": 100,
+    "start_offset": 0,
+    "data_path": "data"
+  },
+  "rate_limit_sleep": 2.0,
+  "max_retries": 3,
+  "output_folder": "output/transactions",
+  "save_json": true,
+  "save_csv": true,
+  "save_excel": false,
+  "email_alerts": {
+    "enabled": true,
+    "from": "api-monitor@company.com",
+    "to": ["dev-team@company.com", "ops@company.com"],
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "smtp_user": "api-monitor@company.com",
+    "smtp_password": "app-specific-password",
+    "use_tls": true
+  }
+}

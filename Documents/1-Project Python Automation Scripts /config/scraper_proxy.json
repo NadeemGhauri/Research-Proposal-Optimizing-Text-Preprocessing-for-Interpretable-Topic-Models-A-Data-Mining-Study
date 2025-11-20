@@ -1,0 +1,31 @@
+{
+  "urls": [
+    "https://example.com/page1",
+    "https://example.com/page2",
+    "https://example.com/page3"
+  ],
+  "use_selenium": false,
+  "proxies": [
+    "http://proxy1.example.com:8080",
+    "http://username:password@proxy2.example.com:8080",
+    "http://proxy3.example.com:3128"
+  ],
+  "rotate_proxies": true,
+  "rotate_user_agents": true,
+  "custom_headers": {
+    "Referer": "https://google.com",
+    "Accept-Language": "en-US,en;q=0.9"
+  },
+  "css_selectors": {
+    "title": "h1",
+    "content": "article p"
+  },
+  "output_formats": ["json", "csv", "excel"],
+  "output_folder": "./scraped_data",
+  "base_filename": "proxy_scrape",
+  "min_delay": 1.0,
+  "max_delay": 2.0,
+  "requests_per_minute": 40,
+  "respect_robots_txt": true,
+  "timeout": 30
+}

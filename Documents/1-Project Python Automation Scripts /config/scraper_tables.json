@@ -1,0 +1,21 @@
+{
+  "urls": [
+    "https://en.wikipedia.org/wiki/List_of_countries_by_GDP"
+  ],
+  "use_selenium": false,
+  "table_selectors": [
+    "table.wikitable",
+    "table.sortable"
+  ],
+  "css_selectors": {
+    "page_title": "h1.firstHeading",
+    "intro": "#mw-content-text > div > p:first-of-type"
+  },
+  "output_formats": ["excel", "json"],
+  "output_folder": "./scraped_data",
+  "base_filename": "wikipedia_tables",
+  "min_delay": 3.0,
+  "max_delay": 5.0,
+  "respect_robots_txt": true,
+  "rotate_user_agents": true
+}
