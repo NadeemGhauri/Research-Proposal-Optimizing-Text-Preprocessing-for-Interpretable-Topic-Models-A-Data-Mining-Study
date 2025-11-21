@@ -1,0 +1,246 @@
+{
+  "project_name": "Q4_2024_Business_Review",
+  "description": "Comprehensive business intelligence report for Q4 2024 performance analysis",
+  
+  "data_sources": [
+    {
+      "name": "sales",
+      "path": "data/sales_data.csv",
+      "type": "csv",
+      "description": "Sales transactions data"
+    },
+    {
+      "name": "products",
+      "path": "data/product_data.csv",
+      "type": "csv",
+      "description": "Product catalog and pricing"
+    }
+  ],
+  
+  "branding": {
+    "primary_color": "#1a5490",
+    "secondary_color": "#2ecc71",
+    "accent_color": "#e74c3c",
+    "color_palette": ["#1a5490", "#2ecc71", "#3498db", "#f39c12", "#e74c3c"],
+    "company_name": "ABC Corporation",
+    "company_logo": null,
+    "report_footer": "Confidential - Internal Use Only"
+  },
+  
+  "output_folder": "./bi_suite_output",
+  
+  "outputs": {
+    "dashboard": {
+      "enabled": true,
+      "filename": "Q4_2024_Dashboard.html",
+      "title": "Q4 2024 Business Performance Dashboard",
+      "primary_data_source": "sales",
+      "theme": "plotly_white",
+      "show_data_table": true,
+      "enable_export": true,
+      "auto_refresh": false,
+      "refresh_interval": 300,
+      
+      "charts": [
+        {
+          "type": "bar",
+          "title": "Revenue by Region",
+          "data_column_x": "Region",
+          "data_column_y": "Revenue",
+          "aggregation": "sum",
+          "color": "#1a5490"
+        },
+        {
+          "type": "line",
+          "title": "Sales Trend Over Time",
+          "data_column_x": "Date",
+          "data_column_y": "Revenue",
+          "aggregation": "sum",
+          "color": "#2ecc71"
+        },
+        {
+          "type": "pie",
+          "title": "Market Share by Product",
+          "data_column_x": "Product",
+          "data_column_y": "Revenue",
+          "aggregation": "sum"
+        },
+        {
+          "type": "scatter",
+          "title": "Quantity vs Revenue Correlation",
+          "data_column_x": "Quantity",
+          "data_column_y": "Revenue",
+          "color_by": "Region"
+        }
+      ],
+      
+      "filters": ["Region", "Product"]
+    },
+    
+    "pdf": {
+      "enabled": true,
+      "filename": "Q4_2024_Report.pdf",
+      "title": "Q4 2024 Business Performance Report",
+      "subtitle": "Comprehensive Analysis and Strategic Insights",
+      "author": "Business Intelligence Team",
+      "include_cover_page": true,
+      "include_toc": true,
+      "include_header": true,
+      "include_footer": true,
+      "include_page_numbers": true,
+      
+      "sections": [
+        {
+          "title": "Executive Summary",
+          "content_type": "text",
+          "content": "This report provides a comprehensive analysis of Q4 2024 business performance across all regions and product lines. Key highlights include record-breaking revenue growth, successful product launches, and strategic market expansion initiatives."
+        },
+        {
+          "title": "Revenue Performance by Region",
+          "content_type": "chart",
+          "data_source": "sales",
+          "content": {
+            "chart_type": "bar",
+            "title": "Total Revenue by Region - Q4 2024",
+            "data_column_x": "Region",
+            "data_column_y": "Revenue",
+            "aggregation": "sum",
+            "color": "#1a5490"
+          }
+        },
+        {
+          "title": "Sales Trend Analysis",
+          "content_type": "chart",
+          "data_source": "sales",
+          "content": {
+            "chart_type": "line",
+            "title": "Monthly Sales Trend - Q4 2024",
+            "data_column_x": "Date",
+            "data_column_y": "Revenue",
+            "aggregation": "sum",
+            "color": "#2ecc71"
+          }
+        },
+        {
+          "title": "Product Performance",
+          "content_type": "chart",
+          "data_source": "sales",
+          "content": {
+            "chart_type": "pie",
+            "title": "Revenue Distribution by Product Category",
+            "data_column_x": "Product",
+            "data_column_y": "Revenue",
+            "aggregation": "sum"
+          }
+        },
+        {
+          "title": "Top Sales Transactions",
+          "content_type": "table",
+          "data_source": "sales",
+          "content": {
+            "title": "Top 20 Revenue Transactions",
+            "columns": ["Date", "Product", "Region", "Quantity", "Revenue"],
+            "max_rows": 20,
+            "sort_by": "Revenue",
+            "sort_ascending": false,
+            "alternate_row_colors": true
+          }
+        },
+        {
+          "title": "Key Performance Indicators",
+          "content_type": "text",
+          "content": "Q4 2024 Performance Metrics:\n\n• Total Revenue: $X.XX million\n• Year-over-Year Growth: XX%\n• Average Transaction Value: $X,XXX\n• Customer Acquisition: X,XXX new customers\n• Market Share Increase: X.X%\n\nStrategic Achievements:\n• Successfully launched 3 new product lines\n• Expanded operations to 2 new regions\n• Improved customer satisfaction by XX%\n• Reduced operational costs by XX%"
+        },
+        {
+          "title": "Recommendations",
+          "content_type": "text",
+          "content": "Strategic Recommendations for 2025:\n\n1. Continue expansion in high-growth regions\n2. Invest in top-performing product categories\n3. Enhance digital marketing initiatives\n4. Optimize supply chain efficiency\n5. Strengthen customer relationship management\n\nNext Steps:\n• Quarterly review meetings\n• Monthly performance tracking\n• Customer feedback surveys\n• Competitive analysis updates"
+        }
+      ]
+    },
+    
+    "excel": {
+      "enabled": true,
+      "filename": "Q4_2024_Data_Workbook.xlsx",
+      "include_summary": true,
+      "apply_formatting": true,
+      
+      "kpis": [
+        {
+          "name": "Total Revenue",
+          "value": "=SUM(Sales[Revenue])",
+          "target": 5000000,
+          "status": "On Track"
+        },
+        {
+          "name": "Average Order Value",
+          "value": "=AVERAGE(Sales[Revenue])",
+          "target": 2500,
+          "status": "Exceeds Target"
+        },
+        {
+          "name": "Total Transactions",
+          "value": "=COUNT(Sales[Date])",
+          "target": 2000,
+          "status": "On Track"
+        }
+      ],
+      
+      "sheets": [
+        {
+          "name": "All Sales Data",
+          "data_source": "sales",
+          "columns": ["Date", "Product", "Region", "Quantity", "Revenue"],
+          "filters": {}
+        },
+        {
+          "name": "North Region Sales",
+          "data_source": "sales",
+          "columns": ["Date", "Product", "Quantity", "Revenue"],
+          "filters": {
+            "Region": "North"
+          }
+        },
+        {
+          "name": "South Region Sales",
+          "data_source": "sales",
+          "columns": ["Date", "Product", "Quantity", "Revenue"],
+          "filters": {
+            "Region": "South"
+          }
+        },
+        {
+          "name": "Revenue by Region",
+          "data_source": "sales",
+          "pivot_table": {
+            "rows": ["Region"],
+            "cols": [],
+            "values": ["Revenue"],
+            "aggfunc": "sum"
+          }
+        },
+        {
+          "name": "Product Performance",
+          "data_source": "sales",
+          "pivot_table": {
+            "rows": ["Product"],
+            "cols": ["Region"],
+            "values": ["Revenue"],
+            "aggfunc": "sum"
+          },
+          "chart": {
+            "type": "bar",
+            "title": "Product Revenue by Region",
+            "data_range": "A1:E10",
+            "position": "G2"
+          }
+        },
+        {
+          "name": "Product Catalog",
+          "data_source": "products",
+          "columns": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "project_name": "Sales_Analytics_Report",
+  "description": "Simple sales analytics with dashboard and PDF",
+  
+  "data_sources": [
+    {
+      "name": "sales",
+      "path": "data/sales_data.csv",
+      "type": "csv"
+    }
+  ],
+  
+  "branding": {
+    "primary_color": "#2c3e50",
+    "secondary_color": "#3498db",
+    "company_name": "My Company"
+  },
+  
+  "output_folder": "./bi_reports",
+  
+  "outputs": {
+    "dashboard": {
+      "enabled": true,
+      "filename": "sales_dashboard.html",
+      "title": "Sales Analytics Dashboard",
+      "primary_data_source": "sales",
+      "theme": "plotly_white",
+      
+      "charts": [
+        {
+          "type": "bar",
+          "title": "Revenue by Region",
+          "data_column_x": "Region",
+          "data_column_y": "Revenue",
+          "aggregation": "sum"
+        },
+        {
+          "type": "line",
+          "title": "Sales Trend",
+          "data_column_x": "Date",
+          "data_column_y": "Revenue",
+          "aggregation": "sum"
+        }
+      ],
+      
+      "filters": ["Region"]
+    },
+    
+    "pdf": {
+      "enabled": true,
+      "filename": "sales_report.pdf",
+      "title": "Sales Performance Report",
+      "subtitle": "Monthly Analysis",
+      "author": "Analytics Team",
+      
+      "sections": [
+        {
+          "title": "Overview",
+          "content_type": "text",
+          "content": "This report summarizes key sales metrics and trends."
+        },
+        {
+          "title": "Revenue by Region",
+          "content_type": "chart",
+          "data_source": "sales",
+          "content": {
+            "chart_type": "bar",
+            "title": "Regional Revenue Distribution",
+            "data_column_x": "Region",
+            "data_column_y": "Revenue",
+            "aggregation": "sum"
+          }
+        }
+      ]
+    },
+    
+    "excel": {
+      "enabled": false
+    }
+  }
+}
