@@ -162,3 +162,21 @@ A structured human evaluation study will assess topic interpretability through e
 *Inter-Rater Reliability*: Intraclass correlation coefficients (ICC) will be calculated to assess consistency among evaluators. Topics with low agreement will be flagged for review or exclusion from final analyses.
 
 *Analysis*: Human ratings will be aggregated using mean scores across evaluators for each topic, then averaged across topics within each preprocessing configuration. Statistical analyses will examine correlations between human ratings and automated coherence metrics, identifying convergent and divergent patterns. Preprocessing configurations achieving high scores on both automated and human evaluation measures will be identified as optimal solutions.
+
+## Key References
+
+Blei, D. M., Ng, A. Y., & Jordan, M. I. (2003). Latent Dirichlet allocation. *Journal of Machine Learning Research*, 3, 993-1022.
+
+Cao, Z., Li, S., Liu, Y., Li, W., & Ji, H. (2015). A novel neural topic model and its supervised extension. In *Proceedings of the AAAI Conference on Artificial Intelligence* (Vol. 29, No. 1, pp. 2210-2216).
+
+Denny, M. J., & Spirling, A. (2018). Text preprocessing for unsupervised learning: Why it matters, when it misleads, and what to do about it. *Political Analysis*, 26(2), 168-189. https://doi.org/10.1017/pan.2017.44
+
+Miao, Y., Yu, L., & Blunsom, P. (2016). Neural variational inference for text processing. In *Proceedings of the 33rd International Conference on Machine Learning* (pp. 1727-1736).
+
+Röder, M., Both, A., & Hinneburg, A. (2015). Exploring the space of topic coherence measures. In *Proceedings of the Eighth ACM International Conference on Web Search and Data Mining* (pp. 399-408). https://doi.org/10.1145/2684822.2685324
+
+Schofield, A., Magnusson, M., & Mimno, D. (2017). Pulling out the stops: Rethinking stopword removal for topic models. In *Proceedings of the 15th Conference of the European Chapter of the Association for Computational Linguistics* (Vol. 2, pp. 432-436).
+
+Srivastava, A., & Sutton, C. (2017). Autoencoding variational inference for topic models. In *Proceedings of the International Conference on Learning Representations* (ICLR).
+
+Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., & Polosukhin, I. (2017). Attention is all you need. In *Advances in Neural Information Processing Systems* (Vol. 30, pp. 5998-6008).
