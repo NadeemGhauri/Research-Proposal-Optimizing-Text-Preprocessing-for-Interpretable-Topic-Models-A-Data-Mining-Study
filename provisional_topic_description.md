@@ -76,3 +76,89 @@ This question addresses the critical challenge of stop-word selection in special
 **RQ3: What combinations of preprocessing operations produce optimal trade-offs between topic coherence scores and human-judged interpretability across diverse text corpora?**
 
 This question recognizes that preprocessing involves configuring multiple interdependent parameters rather than selecting individual techniques in isolation. It investigates whether certain preprocessing configurations consistently achieve favorable positions on the coherence-interpretability frontier, or whether optimal configurations are corpus-dependent. By examining preprocessing pipelines as integrated systems (encompassing tokenization strategies, morphological normalization, stop-word filtering, and n-gram inclusion), this question seeks to identify synergistic combinations that maximize both computational coherence metrics and human judgments of topic quality. The research will also explore potential divergences between automated metrics and human assessments, investigating scenarios where high computational coherence does not translate to interpretability, and characterizing corpus features that moderate these relationships.
+
+## Research Methodology
+
+This research employs an empirical, comparative experimental approach to systematically investigate the effects of text preprocessing variations on topic model quality. The methodology is designed to isolate preprocessing impacts through controlled manipulation of independent variables while measuring outcomes using both automated metrics and human judgment.
+
+### Data
+
+The primary dataset for this investigation will be the **20 Newsgroups corpus**, a widely-used benchmark collection consisting of approximately 20,000 documents distributed across 20 distinct thematic categories (e.g., science, politics, religion, computing). This corpus offers several methodological advantages: (1) its established status as a standard benchmark facilitates comparison with existing literature; (2) the topical diversity enables assessment of preprocessing effects across varied semantic domains; (3) the moderate document length (averaging 300-400 words) is representative of many real-world text mining scenarios; and (4) the known ground-truth category labels enable validation of topic-category alignment.
+
+To enhance generalizability and test domain-dependence hypotheses, supplementary analyses will incorporate additional corpora representing different textual genres and domain characteristics. Candidate datasets include scientific abstracts (e.g., PubMed abstracts for biomedical domain), social media text (e.g., Twitter datasets for informal, short-form text), and domain-specific collections (e.g., Reuters news articles, legal case summaries). This multi-corpus strategy will enable assessment of whether preprocessing effects generalize across textual domains or exhibit corpus-specific patterns.
+
+### Variables
+
+**Independent Variables (Preprocessing Pipelines):**
+
+The experimental design manipulates preprocessing configurations as the primary independent variables. Each preprocessing pipeline represents a specific combination of text transformation operations:
+
+- **Stop-word Removal Strategy**: (1) No stop-word removal, (2) NLTK standard English stop-word list, (3) Domain-adapted stop-word list constructed through frequency analysis and expert review, (4) Frequency-based filtering (removing top-k most frequent terms)
+
+- **Morphological Normalization**: (1) No normalization, (2) Porter stemming, (3) Snowball stemming, (4) WordNet lemmatization
+
+- **Tokenization Scheme**: (1) Unigrams only, (2) Unigrams + bigrams, (3) Unigrams + bigrams + trigrams, (4) Bigrams only (for comparative analysis)
+
+- **Case Normalization**: (1) Lowercase conversion, (2) Preservation of original case
+
+- **Numeric Handling**: (1) Removal of numeric tokens, (2) Retention of numeric tokens, (3) Replacement with placeholder tokens
+
+The full factorial combination of these factors generates a comprehensive set of distinct preprocessing configurations. To maintain experimental feasibility, a strategically-designed subset will be selected through pilot testing and theoretical justification, ensuring coverage of critical comparisons while avoiding combinatorial explosion.
+
+**Dependent Variables (Outcome Measures):**
+
+Topic model quality will be assessed through multiple dependent variables capturing different quality dimensions:
+
+- **Topic Coherence Score (C_v)**: The primary quantitative metric, measuring semantic similarity among top words within topics based on word co-occurrence patterns in a reference corpus. C_v coherence has demonstrated strong correlation with human interpretability judgments in prior research.
+
+- **Additional Coherence Metrics**: C_umass coherence (based on document co-occurrence) and NPMI (Normalized Pointwise Mutual Information) will provide convergent validity evidence and capture complementary coherence aspects.
+
+- **Topic Diversity**: Measured as the percentage of unique words across top-N terms of all topics, assessing the distinctiveness and non-redundancy of discovered themes.
+
+- **Perplexity**: A held-out likelihood measure indicating model's predictive performance on unseen documents, providing a computational quality indicator.
+
+- **Human Interpretability Ratings**: Trained human evaluators will rate topics on 5-point Likert scales assessing semantic coherence, interpretability, and practical utility.
+
+### Experimental Setup
+
+The experimental implementation will leverage established Python libraries for natural language processing and topic modeling:
+
+**Preprocessing Implementation:**
+
+Text preprocessing will be implemented using the **Natural Language Toolkit (NLTK)** and **spaCy** libraries. NLTK will provide tokenization functions, stop-word lists, and stemming algorithms (PorterStemmer, SnowballStemmer). SpaCy will be employed for lemmatization through its robust part-of-speech tagging and morphological analysis capabilities. Custom preprocessing functions will be developed to ensure consistent application of each pipeline configuration and maintain reproducibility through deterministic processing and versioned code.
+
+**Topic Modeling:**
+
+Latent Dirichlet Allocation (LDA) models will be trained using the **Gensim** library, which provides efficient, well-documented implementations of topic modeling algorithms. Gensim's LdaModel class will be configured with consistent hyperparameters across all experimental conditions to isolate preprocessing effects: number of topics (K) will be determined through preliminary grid search (testing K ∈ {10, 15, 20, 25, 30}); alpha (document-topic density) and beta (topic-word density) parameters will be set to symmetric priors; inference will employ variational Bayes with convergence criteria standardized across runs.
+
+Alternative topic modeling implementation using **scikit-learn's** LatentDirichletAllocation will be conducted as a robustness check, verifying that findings generalize across different algorithmic implementations. Each preprocessing-model combination will be executed with multiple random seeds to assess result stability and enable statistical testing of differences.
+
+**Computational Environment:**
+
+All experiments will be executed in a controlled computational environment with documented hardware specifications, software versions (Python 3.9+, Gensim 4.x, NLTK 3.x, spaCy 3.x), and package dependencies managed through virtual environments (conda or virtualenv). Experiment tracking will employ MLflow or similar frameworks to maintain comprehensive records of experimental conditions, parameters, and results.
+
+### Evaluation
+
+Evaluation employs a mixed-methods approach combining automated computational metrics with structured human assessment:
+
+**Automated Coherence Evaluation:**
+
+The **C_v coherence metric** will serve as the primary automated evaluation measure. C_v coherence will be computed using Gensim's CoherenceModel, which calculates semantic similarity of topic words based on normalized pointwise mutual information (NPMI) and cosine similarity over word vectors. For each topic model, C_v scores will be computed for individual topics and averaged to produce an overall model coherence score. The reference corpus for co-occurrence statistics will be the training corpus itself (intrinsic coherence).
+
+Supplementary coherence metrics (C_umass, C_npmi, C_uci) will be calculated to provide convergent evidence and assess metric sensitivity. These multiple metrics capture different operationalizations of coherence: C_umass uses document co-occurrence, C_npmi employs normalized pointwise mutual information, and C_uci leverages sliding-window co-occurrence. Comparing results across metrics will reveal whether preprocessing effects are consistent across different coherence conceptualizations or metric-dependent.
+
+Topic diversity scores will be calculated by extracting the top-25 words from each topic, computing the total count of unique words across all topics, and dividing by the total number of words examined (K topics × 25 words). Higher diversity scores indicate more distinct topics with less lexical overlap.
+
+**Human Evaluation Protocol:**
+
+A structured human evaluation study will assess topic interpretability through expert judgment. The evaluation protocol will include:
+
+*Participant Recruitment*: 15-20 evaluators will be recruited, including both domain experts familiar with the 20 Newsgroups content domains and naive raters without specialized knowledge, enabling assessment of interpretability for different user populations.
+
+*Evaluation Task*: For each topic, evaluators will be presented with the top-10 most probable words (unordered to avoid position bias). Participants will rate each topic on three dimensions using 5-point Likert scales: (1) Semantic Coherence ("Do these words represent a coherent, unified concept?"), (2) Interpretability ("Can you easily infer what this topic is about?"), and (3) Usefulness ("Would this topic be useful for understanding or organizing documents?").
+
+*Annotation Interface*: A custom web-based annotation interface will be developed to present topics in randomized order, collect ratings, and allow optional textual justifications. Topics from different preprocessing conditions will be intermixed to prevent order effects and ensure blind evaluation.
+
+*Inter-Rater Reliability*: Intraclass correlation coefficients (ICC) will be calculated to assess consistency among evaluators. Topics with low agreement will be flagged for review or exclusion from final analyses.
+
+*Analysis*: Human ratings will be aggregated using mean scores across evaluators for each topic, then averaged across topics within each preprocessing configuration. Statistical analyses will examine correlations between human ratings and automated coherence metrics, identifying convergent and divergent patterns. Preprocessing configurations achieving high scores on both automated and human evaluation measures will be identified as optimal solutions.
